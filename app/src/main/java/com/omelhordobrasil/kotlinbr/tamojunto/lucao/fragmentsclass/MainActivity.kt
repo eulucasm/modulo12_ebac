@@ -13,16 +13,12 @@ class MainActivity : AppCompatActivity() {
         val binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        val navHost = supportFragmentManager.findFragmentById(R.id.fragmentContainerView) as NavHostFragment
+        val navHost =
+            supportFragmentManager.findFragmentById(R.id.fragmentContainerView) as NavHostFragment
         val navController = navHost.navController
 
         val button = findViewById<Button>(R.id.button)
         button.setOnClickListener {
-//            val secondFragment = SecondFragment()
-//            val fragmentsTransaction = supportFragmentManager.beginTransaction()
-//            fragmentsTransaction.replace(R.id.fragmentContainerView2, secondFragment)
-//            fragmentsTransaction.commit()
-
             navController.navigate(R.id.action_firstFragment_to_secondFragment)
         }
 
